@@ -1,6 +1,6 @@
 function showUsername() {
   const USERNAME = prompt("İsminizi girin: ");
-  var text = document.createTextNode(USERNAME);
+  let text = document.createTextNode(USERNAME);
   let nameSpan = document.querySelector("#myName");
   nameSpan.appendChild(text);
 }
@@ -16,6 +16,11 @@ function showTime() {
     "Cumartesi",
     "Pazar",
   ];
+
+  let text = document.createTextNode(
+    `${d.toLocaleDateString()} ${days[d.getDay() - 1]}`
+  );
+
   let clockDiv = document.querySelector("#myClock");
-  clockDiv.innerHTML = `${d.toLocaleDateString()} ${days[d.getDay() - 1]}`;
+  clockDiv.appendChild(text);
 }
